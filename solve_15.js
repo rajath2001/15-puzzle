@@ -1,5 +1,6 @@
 function solve_15(starting_node){
-    let visited = new Set();
+  
+    let visited = [];
     let current = [];
    
    current.push(starting_node);
@@ -8,16 +9,17 @@ function solve_15(starting_node){
        let current_node = current[0];
        if(current_node.reached())
             return current_node;
-       visited.add([current_node.state()]);
+       
+       visited.push([current_node.position]);
+       
        current.shift();
        var next_moves  = current_node.next();
 
        for(var i = 0; i < next_moves.length; i++ ){
-            if(!visited.has(next_moves[i].state())){
+            if(!incl(visited,next_moves[i].position)){
                 current.push(next_moves[i]);
             }
        }
-
    }
 }
 
