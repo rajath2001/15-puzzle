@@ -12,7 +12,7 @@ function draw_array(array){
             rect(x*w + w/2 , y * h + h/2 ,w -5, h - 5,10);
 
             if(array[y][x] != 16){
-                fill(0, 102, 153);
+                fill(255, 215, 0);
                 text(array[y][x],(x*w) +w/2 - 10 , (y*h) + h/2 + 10);
             }
         }
